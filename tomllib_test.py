@@ -2,7 +2,8 @@
 """Just trying out how toml works
 
 Created on 2025.09.17
-@author: jakub.mnn
+Contributors:
+    Jakub
 """
 
 
