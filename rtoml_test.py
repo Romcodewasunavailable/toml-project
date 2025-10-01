@@ -11,8 +11,9 @@ from pathlib import Path
 
 
 def main():
-    data = rtoml.load(Path("quark-common.toml"))
-    print_data(data)
+    with open("quark-common.toml", "r") as file:
+        data = rtoml.load(file)
+        print_data(data)
 
 
 if __name__ == "__main__":
