@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+*** First example of TOML usage, which is defined by :
+$
+
+un moyen de sauvegarde et restitution adapté au format de données pour le cas de données d'un "jeu de rôle" simple,
+typiquement: le personnage du joueur avec ses caractéristiques principales, l'équipement du personnage, etc. 
+
+***

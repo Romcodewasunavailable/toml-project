@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+*** Second example of TOML usage, which is defined by :
+$
+
+Un deuxième exemple semi-standard consiste à chercher des données "réelles" existantes dans le format du projet et les lire.
+Au minimum, il s'agit de trouver quelque part (sur internet) un fichier contenant des données que vous jugez intéressantes, et arriver à les lire et en faire quelque chose depuis un module python que vous créé vous-même.
+Au mieux ("bonus"), votre programme va chercher directement des données variables sur internet (ex: chercher la météo du jour en format xyz)
+
+***
