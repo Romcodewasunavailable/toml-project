@@ -3,6 +3,7 @@
 Created on 2025.10.01
 Contributors:
     Romain
+    Jakub
 """
 
 from __future__ import annotations
@@ -13,21 +14,29 @@ from typing import Callable
 
 
 def create_bench() -> tuple[Callable, ...]:
+    """Create benchmarking functions with a common data cache."""
     cache = {}
 
     def get_cache() -> dict[str, list[float]]:
+        """Retrieve the stored cache."""
         return deepcopy(cache)
 
     def add_value(name: str, time: float) -> None:
+        """Add a new value to the cache under a given name.
+
+        The name is automatically registered if it doesn't already exist.
+        """
         if name in cache:
             cache[name].append(time)
         else:
             cache[name] = [time]
 
     def clear_cache() -> None:
+        """Clear all values in the cache."""
         cache.clear()
 
     def print_cache() -> None:
+        """Print all cached data to the console."""
         if cache:
             print("\n".join(f"{name} - {sum(times) / len(times)} s" for name, times in cache.items()))
         else:
@@ -50,6 +59,7 @@ def benchtime(name: str) -> Callable:
 
 
 def test() -> None:
+    """Executes the test program. Called when the script is executed."""
     add_bench("simple test", 0.5)
     add_bench("simple test", 1.0)
 

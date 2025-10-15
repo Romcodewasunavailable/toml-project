@@ -12,6 +12,7 @@ from display import print_data
 
 
 def main():
+    """Executes the test program. Called when the script is executed."""
     with open("quark-common.toml", "rb") as file:
         toml = tl.load(file)
         print_data(toml)

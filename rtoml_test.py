@@ -3,6 +3,7 @@
 Created on 2025.09.24
 Contributors:
     Romain
+    Jakub
 """
 
 from display import print_data
@@ -11,6 +12,7 @@ from pathlib import Path
 
 
 def main():
+    """Executes the test program. Called when the script is executed."""
     with open("quark-common.toml", "r") as file:
         data = rtoml.load(file)
         print_data(data)

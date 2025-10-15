@@ -14,7 +14,7 @@ inline_list_max_length = 4
 
 
 def format_dict(data: dict, leftpad: int=0) -> str:
-
+    """Format the data contained in a dict to make it more human-readable"""
     result = ""
     for key in data.keys():
         value = data[key]
@@ -28,6 +28,7 @@ def format_dict(data: dict, leftpad: int=0) -> str:
             list_padding = (leftpad + indent_depth) * ' '
 
             bs = ',\n' # needed because python < 3.12 is stupid
+                       # (backslashes aren't allowed in {} in f-strings)
             result += f"{padding}{key} = [\n{bs.join([list_padding + repr(element) for element in value])}\n{padding}]\n"
 
         else:
