@@ -13,6 +13,7 @@ from typing import Callable
 
 
 def create_bench() -> tuple[Callable, ...]:
+    """Closure for managing stored execution times"""
     cache = {}
 
     def get_cache() -> dict[str, list[float]]:
@@ -37,7 +38,10 @@ def create_bench() -> tuple[Callable, ...]:
 
 
 def benchtime(name: str) -> Callable:
-    """Decorator that stores the average execution time of a function"""
+    """Decorator that stores the average execution time of a function
+
+    Uses "name" as key in cached execution times dict.
+    """
     def decorator(f: Callable) -> Callable:
         @wraps(f)
         def wrapper(*args, **kwargs):
