@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Code for displaying formatted data in the console
 
 Moved into a separate file

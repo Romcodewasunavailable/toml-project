@@ -11,7 +11,7 @@ import rtoml
 from pathlib import Path
 
 
-def main():
+def main() -> None:
     """Executes the test program. Called when the script is executed."""
     with open("quark-common.toml", "r") as file:
         data = rtoml.load(file)

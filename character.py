@@ -46,17 +46,17 @@ class Character():
     @classmethod
     def from_input(cls) -> Character:
         """"""
-        name = input("name: ")
-        age = int(input("age: "))
+        name = input("Name: ")
+        age = int(input("Age: "))
         position = Vector2(
-            float(input("x position: ")),
-            float(input("y position: ")),
+            float(input("X position: ")),
+            float(input("Y position: ")),
         )
         inventory = {}
-        print("inventory (type done to finish):")
+        print("Inventory (type done to finish):")
         while True:
-            item = input("add item: ")
-            if item == "done":
+            item = input("Add item: ")
+            if item == "done" or item == "Done":
                 break
             elif item in inventory:
                 inventory[item] += 1
