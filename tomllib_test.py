@@ -1,5 +1,8 @@
 """Example usage of tomllib.
 
+Note: tomllib is only available on python 3.10+, while Thonny runs 3.9 by
+default. Either update python version or run on spyder.
+
 Created on 2025.09.17
 Contributors:
     Jakub
