@@ -1,0 +1,12 @@
+name = "Albert"
+age = 17
+
+[position]
+x = 42.0
+y = 67.0
+
+[inventory]
+laptop = 1
+pencil case = 1
+glasses = 1
+apple = 3
