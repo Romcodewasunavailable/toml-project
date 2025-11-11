@@ -1,4 +1,4 @@
-"""Script for comparing execution time of different toml modules
+"""Script for comparing execution time of different toml modules.
 
 Created on 2025.10.01
 Contributors:
@@ -17,7 +17,7 @@ ITERATIONS = 100
 
 
 def main() -> None:
-    """Executes the test program. Called when the script is executed."""
+    """Execute the test program. Called when the script is executed."""
     for i in range(ITERATIONS):
         load_rtoml(TOML_FILE_PATH)
         load_tomli(TOML_FILE_PATH)

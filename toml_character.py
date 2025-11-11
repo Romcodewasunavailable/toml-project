@@ -1,8 +1,9 @@
-"""Toml implementation of a video game character save system
+"""Toml implementation of a video game character save system.
 
 Created on 2025.11.05
 Contributors:
     Romain
+    Jakub
 """
 
 from __future__ import annotations
@@ -23,6 +24,7 @@ FILE_NAME_PROMPT = "\nFile name: "
 
 
 def input_toml_file_name() -> str:
+    """Ask the user for a .toml file."""
     file_name = input(FILE_NAME_PROMPT)
     if not file_name.endswith(TOML_EXTENSION):
         file_name += TOML_EXTENSION
@@ -31,9 +33,10 @@ def input_toml_file_name() -> str:
 
 
 def main() -> None:
+    """Execute the test program. Called when the script is executed."""
     while True:
         print(ACTIONS_OUTPUT)
-        choice = input(CHOICE_OUTPUT)
+        choice = input(CHOICE_PROMPT)
         match choice:
             case "1":
                 with open(input_toml_file_name(), "w") as file:

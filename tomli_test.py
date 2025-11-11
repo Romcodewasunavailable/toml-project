@@ -12,7 +12,7 @@ import tomli_w
 
 
 def main() -> None:
-    """Executes the test program. Called when the script is executed."""
+    """Execute the test program. Called when the script is executed."""
     with open("quark-common.toml", "rb") as file:
         data = tomli.load(file)
         print_data(data)

@@ -1,6 +1,6 @@
-"""Code for displaying formatted data in the console
+"""Code for displaying formatted data in the console.
 
-Moved into a separate file
+Moved into a separate file.
 
 Created on 2025.09.24
 Contributors:
@@ -13,7 +13,7 @@ inline_list_max_length = 4
 
 
 def format_dict(data: dict, leftpad: int=0) -> str:
-    """Format the data contained in a dict to make it more human-readable"""
+    """Format the data contained in a dict to make it more human-readable."""
     result = ""
     for key in data.keys():
         value = data[key]
@@ -31,7 +31,7 @@ def format_dict(data: dict, leftpad: int=0) -> str:
             result += f"{padding}{key} = [\n{bs.join([list_padding + repr(element) for element in value])}\n{padding}]\n"
 
         else:
-            result += f"{padding}{key} = {value}\n"
+            result += f"{padding}{key} = {repr(value)}\n"
 
     return result
 
@@ -39,3 +39,20 @@ def format_dict(data: dict, leftpad: int=0) -> str:
 def print_data(data: dict) -> None:
     """Turn the data into a human-readable format and print to the console."""
     print(format_dict(data))
+    
+    
+def _test() -> None:
+    print("Beginning display library test...\n")
+    print("====================================\n")
+    
+    print_data({"First": "Apple", "B": ["Apple", "aPpLlE", 42], 3: {-22: None, "foo": "bar", "BR": "OI BRUV"}})
+    
+    print("====================================\n")
+    is_correct = input('Does the above data look properly formatted? (y/n): ').lower().startswith('y')
+    
+    assert is_correct
+    print("Test passed !")
+
+
+if __name__ == "__main__":
+    _test()

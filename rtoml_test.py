@@ -1,4 +1,4 @@
-"""Usage example for rtoml
+"""Usage example for rtoml.
 
 Created on 2025.09.24
 Contributors:
@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    """Executes the test program. Called when the script is executed."""
+    """Execute the test program. Called when the script is executed."""
     with open("quark-common.toml", "r") as file:
         data = rtoml.load(file)
         print_data(data)

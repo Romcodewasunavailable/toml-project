@@ -1,4 +1,4 @@
-"""Module for keeping track of function execution times
+"""Module for keeping track of function execution times.
 
 Created on 2025.10.01
 Contributors:
@@ -61,7 +61,7 @@ def benchtime(name: str) -> Callable:
     return decorator
 
 
-def test() -> None:
+def _test() -> None:
     """Executes the test program. Called when the script is executed."""
     add_bench("simple test", 0.5)
     add_bench("simple test", 1.0)
@@ -81,4 +81,4 @@ def test() -> None:
 get_bench, add_bench, clear_bench, print_bench = create_bench()
 
 if __name__ == "__main__":
-    test()
+    _test()

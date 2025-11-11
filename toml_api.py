@@ -1,5 +1,4 @@
-"""
-Script that fetches an example toml file from GitHub and parses it
+"""Script that fetches an example toml file from GitHub and parses it.
 
 Created on 2025.11.09
 Contributors:
@@ -16,6 +15,7 @@ REQUEST_FAILED_OUTPUT = "HTTP request failed. Status code: {}"
 
 
 def main() -> None:
+    """Execute the test program. Called when the script is executed."""
     response = requests.get(URL)
     if response.status_code == 200:
         print_data(rtoml.loads(response.text))
