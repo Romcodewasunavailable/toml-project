@@ -29,6 +29,14 @@ def format_dict(data: dict, leftpad: int=0) -> str:
             bs = ',\n' # needed because python < 3.12 is stupid
                        # (backslashes aren't allowed in {} in f-strings)
             result += f"{padding}{key} = [\n{bs.join([list_padding + repr(element) for element in value])}\n{padding}]\n"
+        
+        # same as above, except for tuples instead of lists
+        elif type(value) is tuple and len(value) > inline_list_max_length:
+            list_padding = (leftpad + indent_depth) * ' '
+
+            bs = ',\n' # needed because python < 3.12 is stupid
+                       # (backslashes aren't allowed in {} in f-strings)
+            result += f"{padding}{key} = (\n{bs.join([list_padding + repr(element) for element in value])}\n{padding})\n"
 
         else:
             result += f"{padding}{key} = {repr(value)}\n"
@@ -45,7 +53,22 @@ def _test() -> None:
     print("Beginning display library test...\n")
     print("====================================\n")
     
-    print_data({"First": "Apple", "B": ["Apple", "aPpLlE", 42], 3: {-22: None, "foo": "bar", "BR": "OI BRUV"}})
+    data = {
+        "foo": "bar",
+        "Apples": ["Macintosh", "Gala", 260, "🍎", "Bad Apple"],
+        "numbers": {
+            "pie": 3.14159265,
+            3: ["three", "trois", "drei", "trzy"],
+            "Ϝ": 1,
+            "bools": {
+                True: False,
+                "George Boole": None,
+            },
+            "position": (42, float("inf"), float("nan")),
+        }
+    }
+    
+    print_data(data)
     
     print("====================================\n")
     is_correct = input('Does the above data look properly formatted? (y/n): ').lower().startswith('y')

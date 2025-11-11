@@ -1,4 +1,4 @@
-"""Usage example for tomli/tomli-w
+"""Usage example for tomli
 
 Created on 2025.09.24
 Contributors:
@@ -8,7 +8,7 @@ Contributors:
 
 from display import print_data
 import tomli
-import tomli_w
+#import tomli_w
 
 
 def main() -> None:
